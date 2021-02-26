@@ -6,13 +6,19 @@
 ul {
   list-style-type: none;
 }
+html {
+  font-family: "Poppins", sans-serif;
+}
 
 body {
   min-height: 100vh;
   width: 100%;
   background-color: #fff;
   color: #222;
-  font-family: "Poppins", sans-serif;
+}
+.wrapper {
+  max-width: 600px;
+  margin: 0 auto;
 }
 h1 {
   font-weight: 200;
@@ -26,6 +32,7 @@ header,
 form {
   min-height: 10vh;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 }
@@ -37,8 +44,7 @@ form button {
   outline: none;
   background: none;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1),
-    inset 2px 2px 4px rgba(255, 255, 255, 0.9),
-    inset -2px -2px 1px rgba(0, 0, 0, 0.05);
+    inset 2px 2px 4px rgba(255, 255, 255, 0.9);
 }
 form input {
   width: 75%;
@@ -53,16 +59,20 @@ form input:hover {
     inset -2px -2px 1px rgba(255, 255, 255, 0.8);
 }
 form input:focus {
-  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1),
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.01),
     inset 2px 2px 4px rgba(0, 0, 0, 0.05),
     inset -2px -2px 1px rgba(255, 255, 255, 0.8);
 }
 form button {
-  color: rgb(3, 230, 192);
+  background-color: rgb(3, 230, 192);
   cursor: pointer;
   padding: 7px;
   border-radius: 50px;
   transition: 0.3s;
+  color: #fff;
+}
+.fa-plus-square {
+  border-radius: 50px;
 }
 
 .todo-container {
@@ -118,4 +128,30 @@ form button {
 .removed {
   transform: translateX(-100%);
   opacity: 0;
+}
+.input-wrapper {
+  width: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  outline: none;
+  border: none;
+  color: #222;
+}
+.select {
+  margin: 10px;
+  font-size: 0.8rem;
+}
+.select::after {
+  content: "\25BC";
+  color: #222;
+}
+
+.filter-todo {
+  margin-left: 10px;
 }
