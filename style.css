@@ -1,0 +1,65 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+ul {
+  list-style-type: none;
+}
+
+body {
+  min-height: 100vh;
+  background-color: azure;
+  color: #222;
+  font-family: "Poppins", sans-serif;
+}
+header {
+  margin-top: 20px;
+  font-size: 1rem;
+}
+header,
+form {
+  min-height: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+form input,
+form button {
+  padding: 5px;
+  font-size: 1rem;
+  border: none;
+  outline: none;
+  background: none;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1),
+    inset 2px 2px 4px rgba(255, 255, 255, 0.9),
+    inset -2px -2px 1px rgba(0, 0, 0, 0.05);
+}
+form input {
+  margin-right: 10px;
+  border-radius: 3px;
+  padding: 5px 10px;
+}
+form input:hover {
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1),
+    inset 2px 2px 4px rgba(0, 0, 0, 0.05),
+    inset -2px -2px 1px rgba(255, 255, 255, 0.8);
+}
+form input:focus {
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1),
+    inset 2px 2px 4px rgba(0, 0, 0, 0.05),
+    inset -2px -2px 1px rgba(255, 255, 255, 0.8);
+}
+form button {
+  color: #222;
+  cursor: pointer;
+  transition: 0.3s;
+}
+form button:hover {
+  color: rgb(41, 41, 175);
+}
+.todo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
