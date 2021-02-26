@@ -32,6 +32,22 @@ const addTodo = (e) => {
   todoInput.value = "";
 };
 
+const deleteCheck = (e) => {
+  const item = e.target;
+  if (item.classList[0] === "delete-btn") {
+    const todo = item.parentElement;
+    todo.classList.add("removed");
+    todo.addEventListener("transitionend", function () {
+      todo.remove();
+    });
+  }
+
+  if (item.classList[0] === "complete-btn") {
+    const todo = item.parentElement;
+    todo.classList.toggle("completed");
+  }
+};
+
 todoList.addEventListener("click", deleteCheck);
 
 todoButton.addEventListener("click", addTodo);
