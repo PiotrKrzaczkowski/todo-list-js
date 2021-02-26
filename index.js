@@ -89,6 +89,7 @@ const deleteCheck = (e) => {
   if (item.classList[0] === "delete-btn") {
     const todo = item.parentElement;
     todo.classList.add("removed");
+    removeLocalTodos(todo);
     todo.addEventListener("transitionend", function () {
       todo.remove();
     });
@@ -125,16 +126,17 @@ const filterTodo = (e) => {
   });
 };
 
-function removeLocalTodos() {
+function removeLocalTodos(todo) {
   // check
   let todos;
-
   if (localStorage.getItem("todos") === null) {
     todos = [];
   } else {
     todos = JSON.parse(localStorage.getItem("todos"));
   }
-  const todoIndex = todo;
+  const todoIndex = todo.children[0].innerText;
+  todos.splice(todos.indexOf(todoIndex, 1));
+  localStorage.setItem("todos", JSON.stringify(todos));
 }
 
 filterOption.addEventListener("click", filterTodo);
