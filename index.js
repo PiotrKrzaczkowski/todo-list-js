@@ -6,11 +6,15 @@ const todoList = document.querySelector(".todo-list");
 
 const addTodo = (e) => {
   e.preventDefault();
+  if (!todoInput.value) {
+    alert("Enter text into input");
+    return;
+  }
 
   const todoDiv = document.createElement("div");
   todoDiv.classList.add("todo");
   const todoLi = document.createElement("li");
-  todoLi.innerText = "hey";
+  todoLi.innerText = todoInput.value;
   todoLi.classList.add("todo-item");
   todoDiv.appendChild(todoLi);
 
@@ -21,11 +25,13 @@ const addTodo = (e) => {
 
   const deleteButton = document.createElement("button");
   deleteButton.innerHTML = '<i class="fas fa-trash" ></i>';
-  deleteButton.classList.add("complete-btn");
+  deleteButton.classList.add("delete-btn");
   todoDiv.appendChild(deleteButton);
 
   todoList.appendChild(todoDiv);
-  console.log(todoList);
+  todoInput.value = "";
 };
+
+todoList.addEventListener("click", deleteCheck);
 
 todoButton.addEventListener("click", addTodo);
